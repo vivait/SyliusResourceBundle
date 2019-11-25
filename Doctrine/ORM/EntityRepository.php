@@ -40,7 +40,7 @@ class EntityRepository extends BaseEntityRepository implements RepositoryInterfa
      *
      * @return null|object
      */
-    public function find($id)
+    public function find($id, $lockMode = null, $lockVersion = null)
     {
         return $this
             ->getQueryBuilder()
@@ -67,7 +67,7 @@ class EntityRepository extends BaseEntityRepository implements RepositoryInterfa
      *
      * @return null|object
      */
-    public function findOneBy(array $criteria)
+    public function findOneBy(array $criteria, array $orderBy = null)
     {
         $queryBuilder = $this->getQueryBuilder();
 
